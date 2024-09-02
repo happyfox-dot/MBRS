@@ -182,7 +182,7 @@ class Network:
 			validate encoder and decoder
 			'''
 
-			# GAN : target label for encoded image should be "cover"(0)
+			# GAN : target label for encoded image should be "cover"(1) # this is to make the encoded_images to similar to the cover(1) instead of cover(0)
 			g_label_decoded = self.discriminator(encoded_images)
 			g_loss_on_discriminator = self.criterion_BCE(g_label_decoded, self.label_cover[:g_label_decoded.shape[0]])
 
